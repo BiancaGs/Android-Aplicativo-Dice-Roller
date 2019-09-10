@@ -12,3 +12,19 @@
 /captures
 .externalNativeBuild
 .cxx
+
+*.dex
+
+# Built application files
+*.apk
+*.ap_
+
+#Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+
+# Windows clutter
+Thumbs.db
