@@ -2,8 +2,11 @@ package com.example.diceroller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,8 +16,14 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.text = "Let's Roll"
         rollButton.setOnClickListener{
-            Toast.makeText( this, "Button Clicked", Toast.LENGTH_SHORT).show()
-            /* Duração LENGTH_SHORT or LENGTH_LONG*/
+            rollDice()
+
         }
+    }
+
+    private fun rollDice(){
+        val resultText: TextView = findViewById(R.id.result_text)
+//        Set the   text
+        resultText.text = "Dice rolled!"
     }
 }
