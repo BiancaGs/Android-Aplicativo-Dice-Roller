@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import org.w3c.dom.Text
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,7 +24,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun rollDice(){
         val resultText: TextView = findViewById(R.id.result_text)
-//        Set the   text
-        resultText.text = "Dice rolled!"
+
+//      Random Number
+        var randomN = Random.nextInt(1,6)
+
+//      Set the text
+        resultText.text = randomN.toString()
+
+        Toast.makeText( this, "Dice rolled!", Toast.LENGTH_SHORT).show()
     }
 }
