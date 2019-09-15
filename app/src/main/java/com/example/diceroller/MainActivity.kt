@@ -12,15 +12,20 @@ import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
+//  Using lateinit, the initial value does not need to be assigned
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//      Isn't possible initialize the variable diceImage before the command bellow
         setContentView(R.layout.activity_main)
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.text = "Let's Roll"
         rollButton.setOnClickListener{
             rollDice()
-
         }
+//      Initialize the image view variable
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice(){
@@ -37,8 +42,7 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
-        val diceImage : ImageView = findViewById(R.id.dice_image)
-
+//
         diceImage.setImageResource(drawableResource)
 
         Toast.makeText( this, "Dice rolled!", Toast.LENGTH_SHORT).show()
